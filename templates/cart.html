@@ -1,0 +1,216 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>TechReform BD - Cart</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="{% static "cart/images/favicon.svg" %}"
+        />
+
+        <!-- ========================= CSS here ========================= -->
+        <link rel="stylesheet" href="{% static "cart/css/bootstrap.min.css" %}" />
+        <link rel="stylesheet" href="{% static "cart/css/LineIcons.3.0.css" %}" />
+        <link rel="stylesheet" href="{% static "cart/css/tiny-slider.css" %}" />
+        <link rel="stylesheet" href="{% static "cart/css/glightbox.min.css" %}" />
+        <link rel="stylesheet" href="{% static "cart/css/main.css" %}" />
+    </head>
+
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">
+                You are using an <strong>outdated</strong> browser. Please
+                <a href="https://browsehappy.com/">upgrade your browser</a> to
+                improve your experience and security.
+            </p>
+        <![endif]-->
+
+        <!-- Preloader -->
+        <!-- <div class="preloader">
+            <div class="preloader-inner">
+                <div class="preloader-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div> -->
+        <!-- /End Preloader -->
+
+        <!-- Start Breadcrumbs -->
+        <div class="breadcrumbs">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="breadcrumbs-content">
+                            <h1 class="page-title">Cart</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <ul class="breadcrumb-nav">
+                            <li>
+                                <a href="{% url "index" %}"
+                                    ><i class="lni lni-home"></i> Home</a
+                                >
+                            </li>
+                            <li><a href="{% url "index" %}">Shop</a></li>
+                            <li>Cart</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Breadcrumbs -->
+
+        <!-- Shopping Cart -->
+        <div class="shopping-cart section">
+            <div class="container">
+                <div class="cart-list-head">
+                    <!-- Cart List Title -->
+                    <div class="cart-list-title">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-12"></div>
+                            <div class="col-lg-4 col-md-3 col-12">
+                                <p>Product Name</p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <p>Quantity</p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <p>Subtotal</p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <p>Discount</p>
+                            </div>
+                            <div class="col-lg-1 col-md-2 col-12">
+                                <p>Remove</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Cart List Title -->
+                    <!-- Cart Single List list -->
+                    {% if cart %}
+                    {% for item in cart.values %}
+                    <div class="cart-single-list">
+                        <div class="row align-items-center">
+                            <div class="col-lg-1 col-md-1 col-12">
+                                <a href="#">
+                                    <img src="{{ item.image1.url }}" alt="#" />
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-3 col-12">
+                                <h5 class="product-name">
+                                    {{ item.brand }} {{ item.model }}
+                                </h5>
+                                <p class="product-des">
+                                    <span><em>Type:</em> Mirrorless</span>
+                                    <span><em>Color:</em> Black</span>
+                                </p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <div class="count-input">
+                                    <select class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <p>${{item.regular_price}}</p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <p>${{item.price}}</p>
+                            </div>
+                            <div class="col-lg-1 col-md-2 col-12">
+                                <a class="remove-item" href="{% url 'remove_from_cart' item.id %}">
+                                    <i class="lni lni-close"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                        <p>Your cart is empty!</p>
+                    {% endif %}
+                    <!-- End Single List list -->
+
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Total Amount -->
+                        <div class="total-amount">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-6 col-12">
+                                    <div class="left">
+                                        <div class="coupon">
+                                            <form action="#" target="_blank">
+                                                <input
+                                                    name="Coupon"
+                                                    placeholder="Enter Your Coupon"
+                                                />
+                                                <div class="button">
+                                                    <button class="btn">
+                                                        Apply Coupon
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="right">
+                                        <ul>
+                                            <li>
+                                                Cart Subtotal<span>Total: ${{ total }}</span>
+                                            </li>
+                                            <li>Shipping<span>Free</span></li>
+                                            <li>You Save<span>$29.00</span></li>
+                                            <li class="last">
+                                                You Pay<span>$2531.00</span>
+                                            </li>
+                                        </ul>
+                                        <div class="button">
+                                            <a href="{% url "checkout" %}" class="btn"
+                                                >Checkout</a
+                                            >
+                                            <a
+                                                href="{% url "product_grids" %}"
+                                                class="btn btn-alt"
+                                                >Continue shopping</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ End Total Amount -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Shopping Cart -->
+
+        <!-- ========================= scroll-top ========================= -->
+        <a href="#" class="scroll-top">
+            <i class="lni lni-chevron-up"></i>
+        </a>
+
+        <!-- ========================= JS here ========================= -->
+        <script src="{% static "cart/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "cart/js/tiny-slider.js" %}"></script>
+        <script src="{% static "cart/js/glightbox.min.js" %}"></script>
+        <script src="{% static "cart/js/main.js" %}"></script>
+    </body>
+</html>
+
+{% endblock %}

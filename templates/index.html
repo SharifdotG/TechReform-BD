@@ -1,0 +1,837 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        {% block title %}<title>TechReform BD - Home</title>{% endblock %}
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="{% static 'index/images/favicon.svg' %}"
+        />
+
+        <!-- ========================= CSS here ========================= -->
+        <link
+            rel="stylesheet"
+            href="{% static 'index/css/bootstrap.min.css' %}"
+        />
+        <link
+            rel="stylesheet"
+            href="{% static 'index/css/LineIcons.3.0.css' %}"
+        />
+        <link
+            rel="stylesheet"
+            href="{% static 'index/css/tiny-slider.css' %}"
+        />
+        <link
+            rel="stylesheet"
+            href="{% static 'index/css/glightbox.min.css' %}"
+        />
+        <link rel="stylesheet" href="{% static 'index/css/main.css' %}" />
+    </head>
+
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">
+                You are using an <strong>outdated</strong> browser. Please
+                <a href="https://browsehappy.com/">upgrade your browser</a> to
+                improve your experience and security.
+            </p>
+        <![endif]-->
+
+        <!-- Preloader -->
+        <!-- <div class="preloader">
+            <div class="preloader-inner">
+                <div class="preloader-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div> -->
+        <!-- /End Preloader -->
+
+        <!-- Start Hero Area -->
+        <section class="hero-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12 custom-padding-right">
+                        <div class="slider-head">
+                            <!-- Start Hero Slider -->
+                            <div class="hero-slider">
+                                <!-- Start Single Slider -->
+                                <div
+                                    class="single-slider"
+                                    style="
+                                        background-image: url('{% static 'index/images/hero/slider-bg1.png' %}');
+                                    "
+                                >
+                                    <div class="content">
+                                        <h2>
+                                            <span
+                                                >Pre Order Yours Now! (৳1500
+                                                savings)</span
+                                            >
+                                            Latest Gen Intel & AMD CPUs
+                                        </h2>
+                                        <p>
+                                            Get the best deal on the latest
+                                            generation Intel and AMD CPUs. Pre
+                                            order now and save ৳1500.
+
+                                            Only at TechReform BD.
+                                        </p>
+                                        <h3><span>Starting From</span> ৳40,500</h3>
+                                        <div class="button">
+                                            <a
+                                                href="{% url "product_grids" %}"
+                                                class="btn"
+                                                >Shop Now</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Slider -->
+                                <!-- Start Single Slider -->
+                                <div
+                                    class="single-slider"
+                                    style="
+                                        background-image: url('{% static 'index/images/hero/slider-bg2.png' %}');
+                                    "
+                                >
+                                    <div class="content">
+                                        <h2>
+                                            <span>Early Winter Offer</span>
+                                            GPU On Sale!
+                                        </h2>
+                                        <p>
+                                            Get the best deal on the latest
+                                            generation GPUs. Pre order now and
+                                            save ৳3000. Only at TechReform BD.
+                                        </p>
+                                        <h3>
+                                            <span>Starting From:</span> ৳15,300
+                                        </h3>
+                                        <div class="button">
+                                            <a
+                                                href="{% url "product_grids" %}"
+                                                class="btn"
+                                                >Shop Now</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Slider -->
+                            </div>
+                            <!-- End Hero Slider -->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12">
+                        <div class="row">
+                            <div
+                                class="col-lg-12 col-md-6 col-12 md-custom-padding"
+                            >
+                                <!-- Start Small Banner -->
+                                <div
+                                    class="hero-small-banner"
+                                    style="
+                                        background-image: url('{% static 'index/images/hero/slider-bnr.png' %}');
+                                    "
+                                >
+                                    <div class="content">
+                                        <h2>
+                                            <span>Keyboard On Sale</span>
+                                            Asus ROG CLAYMORE II <br />
+                                            Modular TKL Mechanical <br />
+                                            Blue Switch <br />
+                                            Gaming Keyboard <br />
+                                        </h2>
+                                        <h3>৳29,000</h3>
+                                    </div>
+                                </div>
+                                <!-- End Small Banner -->
+                            </div>
+                            <div class="col-lg-12 col-md-6 col-12">
+                                <!-- Start Small Banner -->
+                                <div class="hero-small-banner style2">
+                                    <div class="content">
+                                        <h2>Weekly Sale!</h2>
+                                        <p>
+                                            Saving up to 50% off all online
+                                            store items this week.
+                                        </p>
+                                        <div class="button">
+                                            <a
+                                                class="btn"
+                                                href="{% url "product_grids" %}"
+                                                >Shop Now</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Start Small Banner -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Hero Area -->
+
+        <!-- Start Trending Product Area -->
+        <section class="trending-product section" style="margin-top: 12px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title">
+                            <h2>Trending Product</h2>
+                            <p>
+                                TThese are the products that are currently
+                                trending on our website. Get them before they
+                                run out of stock!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Product -->
+                        <div class="single-product">
+                            <div class="product-image">
+                                <img
+                                    src="{% static 'index/images/trending/cpu.webp' %}"
+                                    alt="#"
+                                />
+                                <span class="sale-tag">Hot</span>
+                                <div class="button">
+                                    <a href="{% url "cpu_grids" %}" class="btn"
+                                        ><i class="lni lni-cart"></i> Explore
+                                        CPUs</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="category">CPU</span>
+                                <h4 class="title">
+                                    <a href="{% url "cpu_grids" %}"
+                                        >Intel Core Ultra 7 265K Arrow Lake Processor</a
+                                    >
+                                </h4>
+                                <ul class="review">
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star"></i></li>
+                                    <li><span>4.0 Review(s)</span></li>
+                                </ul>
+                                <div class="price">
+                                    <span>৳51,500</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Product -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Product -->
+                        <div class="single-product">
+                            <div class="product-image">
+                                <img
+                                    src="{% static 'index/images/trending/cooler.webp' %}"
+                                    alt="#"
+                                />
+                                <span class="sale-tag">-25%</span>
+                                <div class="button">
+                                    <a href="{% url "cooler_grids" %}" class="btn"
+                                        ><i class="lni lni-cart"></i> Explore
+                                        Coolers</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="category">Cooler</span>
+                                <h4 class="title">
+                                    <a href="{% url "cooler_grids" %}"
+                                        >NZXT Kraken Elite 240 RGB 240mm AIO Liquid CPU Cooler</a
+                                    >
+                                </h4>
+                                <ul class="review">
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><span>5.0 Review(s)</span></li>
+                                </ul>
+                                <div class="price">
+                                    <span>৳21,375</span>
+                                    <span class="discount-price">৳28,500</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Product -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Product -->
+                        <div class="single-product">
+                            <div class="product-image">
+                                <img
+                                    src="{% static 'index/images/trending/motherboard.webp' %}"
+                                    alt="#"
+                                />
+                                <div class="button">
+                                    <a href="{% url "motherboard_grids" %}" class="btn"
+                                        ><i class="lni lni-cart"></i> Explore
+                                        Motherboards</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="category">Motherboard</span>
+                                <h4 class="title">
+                                    <a href="{% url "motherboard_grids" %}"
+                                        >ASUS Z890 AYW GAMING WIFI W LGA 1851 ATX Motherboard</a
+                                    >
+                                </h4>
+                                <ul class="review">
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><span>5.0 Review(s)</span></li>
+                                </ul>
+                                <div class="price">
+                                    <span>৳42,500</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Product -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Product -->
+                        <div class="single-product">
+                            <div class="product-image">
+                                <img
+                                    src="{% static 'index/images/trending/hdd.webp' %}"
+                                    alt="#"
+                                />
+                                <span class="new-tag">New</span>
+                                <div class="button">
+                                    <a href="{% url "hdd_grids" %}" class="btn"
+                                        ><i class="lni lni-cart"></i> Explore
+                                        HDDs</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="category">HDD</span>
+                                <h4 class="title">
+                                    <a href="{% url "hdd_grids" %}"
+                                        >Seagate IronWolf Pro 16TB 3.5 Inch SATA 7200RPM NAS HDD</a
+                                    >
+                                </h4>
+                                <ul class="review">
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><span>5.0 Review(s)</span></li>
+                                </ul>
+                                <div class="price">
+                                    <span>৳68,500</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Product -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Product -->
+                        <div class="single-product">
+                            <div class="product-image">
+                                <img
+                                    src="{% static 'index/images/trending/gpu.jpg' %}"
+                                    alt="#"
+                                />
+                                <span class="new-tag">New</span>
+                                <div class="button">
+                                    <a href="{% url "gpu_grids" %}" class="btn"
+                                        ><i class="lni lni-cart"></i> Explore
+                                        GPUs</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="category">GPU</span>
+                                <h4 class="title">
+                                    <a href="{% url "gpu_grids" %}"
+                                        >Sapphire TOXIC AMD Radeon RX 6950 XT Limited Edition 16GB</a
+                                    >
+                                </h4>
+                                <ul class="review">
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><span>5.0 Review(s)</span></li>
+                                </ul>
+                                <div class="price">
+                                    <span>৳95,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Product -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Product -->
+                        <div class="single-product">
+                            <div class="product-image">
+                                <img
+                                    src="{% static 'index/images/trending/casing.jpg' %}"
+                                    alt="#"
+                                />
+                                <div class="button">
+                                    <a href="{% url "casing_grids" %}" class="btn"
+                                        ><i class="lni lni-cart"></i> Explore
+                                        Casings</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="category">Casing</span>
+                                <h4 class="title">
+                                    <a href="{% url "casing_grids" %}"
+                                        >Asus ROG Hyperion GR701 RGB ATX Gaming Case</a
+                                    >
+                                </h4>
+                                <ul class="review">
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star"></i></li>
+                                    <li><span>4.0 Review(s)</span></li>
+                                </ul>
+                                <div class="price">
+                                    <span>৳51,200</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Product -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Product -->
+                        <div class="single-product">
+                            <div class="product-image">
+                                <img
+                                    src="{% static 'index/images/trending/keyboard.webp' %}"
+                                    alt="#"
+                                />
+                                <span class="sale-tag">-50%</span>
+                                <div class="button">
+                                    <a href="{% url "keyboard_grids" %}" class="btn"
+                                        ><i class="lni lni-cart"></i> Explore
+                                        Keyboards</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="category">Keyboard</span>
+                                <h4 class="title">
+                                    <a href="{% url "keyboard_grids" %}"
+                                        >Razer BlackWidow V4 RGB Mechanical Gaming Keyboard</a
+                                    >
+                                </h4>
+                                <ul class="review">
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star"></i></li>
+                                    <li><span>4.0 Review(s)</span></li>
+                                </ul>
+                                <div class="price">
+                                    <span>৳13,000</span>
+                                    <span class="discount-price">৳26,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Product -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Product -->
+                        <div class="single-product">
+                            <div class="product-image">
+                                <img
+                                    src="{% static 'index/images/trending/headphone.webp' %}"
+                                    alt="#"
+                                />
+                                <div class="button">
+                                    <a href="{% url "headphone_grids" %}" class="btn"
+                                        ><i class="lni lni-cart"></i> Explore
+                                        Headphones</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="category">Headphone</span>
+                                <h4 class="title">
+                                    <a href="{% url "headphone_grids" %}"
+                                        >Asus ROG Fusion II 500 Wired Over-Ear Gaming Headphone</a
+                                    >
+                                </h4>
+                                <ul class="review">
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><span>5.0 Review(s)</span></li>
+                                </ul>
+                                <div class="price">
+                                    <span>৳25,499</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Product -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Trending Product Area -->
+
+        <!-- Start Call Action Area -->
+        <section class="call-action section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 col-12">
+                        <div class="inner">
+                            <div class="content">
+                                <h2 class="wow fadeInUp" data-wow-delay=".4s">
+                                    <strong>What is<br />
+                                    TechReform BD?</strong>
+                                </h2>
+                                <p class="wow fadeInUp" data-wow-delay=".6s">
+                                    <strong>TechReform BD</strong> is poised to transform the PC component market
+                                    in Bangladesh by tackling critical issues such as inflated pricing,
+                                    intermediary-driven supply chains, and inadequate after-sales service. The
+                                    project introduces a streamlined Supplier-to-Consumer platform designed to
+                                    ensure fair pricing comparable to international markets, transparent transactions,
+                                    and reliable support. With its intuitive design and rich features, such as
+                                    compatibility checking, detailed order tracking, and preferred payment options
+                                    like Cash on Delivery, the platform offers a seamless and trustworthy shopping
+                                    experience for diverse user groups, including tech enthusiasts, institutions,
+                                    and everyday consumers.
+                                </p>
+                                <div
+                                    class="button wow fadeInUp"
+                                    data-wow-delay=".8s"
+                                >
+                                    <a href="{% url "product_grids" %}" class="btn"
+                                        >Browse The Products!</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Call Action Area -->
+
+        <!-- Start Banner Area -->
+        <section class="banner section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div
+                            class="single-banner"
+                            style="
+                                background-image: url('{% static 'index/images/banner/banner-1-bg.png' %}');
+                            "
+                        >
+                            <div class="content">
+                                <h2>Huge Selecton Of Casings</h2>
+                                <p>
+                                    Pick your favorite casing
+                                    <br />from our huge selection.
+                                </p>
+                                <div class="button">
+                                    <a href="{% url "product_grids" %}" class="btn"
+                                        >View Details</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div
+                            class="single-banner custom-responsive-margin"
+                            style="
+                                background-image: url('{% static 'index/images/banner/banner-2-bg.png' %}');
+                            "
+                        >
+                            <div class="content">
+                                <h2>Large Collection of RAMs</h2>
+                                <p>
+                                    Get the best RAMs for your
+                                    <br />computer from our collection.
+                                </p>
+                                <div class="button">
+                                    <a href="{% url "product_grids" %}" class="btn"
+                                        >Shop Now</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Banner Area -->
+
+        <!-- Start Team Area -->
+        <section class="team section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title">
+                            <h2 class="wow fadeInUp" data-wow-delay=".4s">
+                                The Team Behind TechReform BD
+                            </h2>
+                            <p class="wow fadeInUp" data-wow-delay=".6s">
+                                We tried to make the best possible Django
+                                project possible. We hope you like it ❤️
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Team -->
+                        <div class="single-team">
+                            <div class="image">
+                                <img src="{% static 'about-us/images/team/sharif.jpg' %}" alt="#" />
+                            </div>
+                            <div class="content">
+                                <div class="info">
+                                    <h3>Sharif Md. Yousuf</h3>
+                                    <h5>Frontend Developer</h5>
+                                    <ul class="social">
+                                        <li>
+                                            <a href="https://www.facebook.com/SharifdotG"
+                                                ><i
+                                                    class="lni lni-facebook-filled"
+                                                ></i
+                                            ></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/SharifdotG"
+                                                ><i
+                                                    class="lni lni-github-original"
+                                                ></i
+                                            ></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/sharifdotg/"
+                                                ><i class="lni lni-linkedin"></i
+                                            ></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Team -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Team -->
+                        <div class="single-team">
+                            <div class="image">
+                                <img src="{% static 'about-us/images/team/priom.jpg' %}" alt="#" />
+                            </div>
+                            <div class="content">
+                                <div class="info">
+                                    <h3>Noor Mohammed Priom</h3>
+                                    <h5>Backend Developer</h5>
+                                    <ul class="social">
+                                        <li>
+                                            <a href="https://www.facebook.com/noormohammed.priom"
+                                                ><i
+                                                    class="lni lni-facebook-filled"
+                                                ></i
+                                            ></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/SOrtINgmASteR"
+                                                ><i
+                                                    class="lni lni-github-original"
+                                                ></i
+                                            ></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/noor-mohammed-priom-227b43328/"
+                                                ><i class="lni lni-linkedin"></i
+                                            ></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Team -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Team -->
+                        <div class="single-team">
+                            <div class="image">
+                                <img src="{% static 'about-us/images/team/Shorna.jpg' %}" alt="#" />
+                            </div>
+                            <div class="content">
+                                <div class="info">
+                                    <h3>Shornali Akter</h3>
+                                    <h5>Designer</h5>
+                                    <ul class="social">
+                                        <li>
+                                            <a href="https://www.facebook.com/nudharshornaa"
+                                                ><i
+                                                    class="lni lni-facebook-filled"
+                                                ></i
+                                            ></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/nudhar60"
+                                                ><i
+                                                    class="lni lni-github-original"
+                                                ></i
+                                            ></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.instagram.com/nudharshorna/"
+                                                ><i class="lni lni-instagram"></i
+                                            ></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Team -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Team Area -->
+
+        <!-- Start Shipping Info -->
+        <section class="shipping-info">
+            <div class="container">
+                <ul>
+                    <!-- Free Shipping -->
+                    <li>
+                        <div class="media-icon">
+                            <i class="lni lni-delivery"></i>
+                        </div>
+                        <div class="media-body">
+                            <h5>Free Shipping</h5>
+                            <span>On order over ৳10,000</span>
+                        </div>
+                    </li>
+                    <!-- Money Return -->
+                    <li>
+                        <div class="media-icon">
+                            <i class="lni lni-support"></i>
+                        </div>
+                        <div class="media-body">
+                            <h5>24/7 Support.</h5>
+                            <span>Live Chat Or Call.</span>
+                        </div>
+                    </li>
+                    <!-- Support 24/7 -->
+                    <li>
+                        <div class="media-icon">
+                            <i class="lni lni-credit-cards"></i>
+                        </div>
+                        <div class="media-body">
+                            <h5>Online Payment.</h5>
+                            <span>Secure Payment Services.</span>
+                        </div>
+                    </li>
+                    <!-- Safe Payment -->
+                    <li>
+                        <div class="media-icon">
+                            <i class="lni lni-reload"></i>
+                        </div>
+                        <div class="media-body">
+                            <h5>Easy Return.</h5>
+                            <span>Hassle Free Shopping.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- End Shipping Info -->
+
+
+        <!-- ========================= scroll-top ========================= -->
+        <a href="#" class="scroll-top">
+            <i class="lni lni-chevron-up"></i>
+        </a>
+
+        <!-- ========================= JS here ========================= -->
+        <script src="{% static 'index/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'index/js/tiny-slider.js' %}"></script>
+        <script src="{% static 'index/js/glightbox.min.js' %}"></script>
+        <script src="{% static 'index/js/main.js' %}"></script>
+        <script type="text/javascript">
+            //========= Hero Slider
+            tns({
+                container: ".hero-slider",
+                slideBy: "page",
+                autoplay: true,
+                autoplayButtonOutput: false,
+                mouseDrag: true,
+                gutter: 0,
+                items: 1,
+                nav: false,
+                controls: true,
+                controlsText: [
+                    '<i class="lni lni-chevron-left"></i>',
+                    '<i class="lni lni-chevron-right"></i>',
+                ],
+            });
+
+            //======== Brand Slider
+            tns({
+                container: ".brands-logo-carousel",
+                autoplay: true,
+                autoplayButtonOutput: false,
+                mouseDrag: true,
+                gutter: 15,
+                nav: false,
+                controls: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    540: {
+                        items: 3,
+                    },
+                    768: {
+                        items: 5,
+                    },
+                    992: {
+                        items: 6,
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
+
+{% endblock %}

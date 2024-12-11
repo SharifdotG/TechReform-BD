@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>TechReform BD - User Profile</title>
+{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static "user-profile/css/main.css" %}" />
+<!-- User Profile Section -->
+<div class="user-profile">
+  <h1>TechReform BD - User Profile</h1>
+
+  <!-- Tabs Navigation -->
+  <div class="tabs">
+    <ul>
+      <li class="tab-link active" data-tab="account-details">Account Details</li>
+      <li class="tab-link" data-tab="billing-address">Billing Address</li>
+      <li class="tab-link" data-tab="shipping-address">Shipping Address</li>
+      <li class="tab-link" data-tab="order-history">Order History</li>
+    </ul>
+  </div>
+
+  <!-- Tab Content -->
+  <div class="tab-content">
+
+    <!-- Account Details Tab -->
+    <div id="account-details" class="tab-section active">
+      <table class="profile-table">
+        <tr>
+          <th>Name</th>
+          <td>John Doe</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>johndoe@example.com</td>
+        </tr>
+        <tr>
+          <th>Phone</th>
+          <td>+123 456 7890</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Billing Address Tab -->
+    <div id="billing-address" class="tab-section">
+      <table class="profile-table">
+        <tr>
+          <th>Street Address</th>
+          <td>123 Main St</td>
+        </tr>
+        <tr>
+          <th>City</th>
+          <td>New York</td>
+        </tr>
+        <tr>
+          <th>State</th>
+          <td>NY</td>
+        </tr>
+        <tr>
+          <th>Zip Code</th>
+          <td>10001</td>
+        </tr>
+        <tr>
+          <th>Country</th>
+          <td>USA</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Shipping Address Tab -->
+    <div id="shipping-address" class="tab-section">
+      <table class="profile-table">
+        <tr>
+          <th>Street Address</th>
+          <td>456 Elm St</td>
+        </tr>
+        <tr>
+          <th>City</th>
+          <td>Brooklyn</td>
+        </tr>
+        <tr>
+          <th>State</th>
+          <td>NY</td>
+        </tr>
+        <tr>
+          <th>Zip Code</th>
+          <td>11201</td>
+        </tr>
+        <tr>
+          <th>Country</th>
+          <td>USA</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Order History Tab -->
+    <div id="order-history" class="tab-section">
+      <table class="profile-table">
+        <thead>
+          <tr>
+            <th>Order #</th>
+            <th>Date</th>
+            <th>Items</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#00123</td>
+            <td>2024-11-01</td>
+            <td>2x T-Shirt, 1x Hoodie</td>
+            <td>Shipped</td>
+          </tr>
+          <tr>
+            <td>#00122</td>
+            <td>2024-10-25</td>
+            <td>1x Sneakers</td>
+            <td>Delivered</td>
+          </tr>
+          <tr>
+            <td>#00121</td>
+            <td>2024-10-15</td>
+            <td>1x Laptop Sleeve</td>
+            <td>Cancelled</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="{% static "user-profile/js/main.js" %}"></script>
+  
+{% endblock %}

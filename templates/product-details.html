@@ -1,0 +1,498 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        {% block title %}<title>
+            TechReform BD - Single Product
+        </title>{% endblock %}
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="{% static "product-details/images/favicon.svg" %}"
+        />
+
+        <!-- ========================= CSS here ========================= -->
+        <link rel="stylesheet" href="{% static "product-details/css/bootstrap.min.css" %}" />
+        <link rel="stylesheet" href="{% static "product-details/css/LineIcons.3.0.css" %}" />
+        <link rel="stylesheet" href="{% static "product-details/css/tiny-slider.css" %}" />
+        <link rel="stylesheet" href="{% static "product-details/css/glightbox.min.css" %}" />
+        <link rel="stylesheet" href="{% static "product-details/css/main.css" %}" />
+    </head>
+
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">
+                You are using an <strong>outdated</strong> browser. Please
+                <a href="https://browsehappy.com/">upgrade your browser</a> to
+                improve your experience and security.
+            </p>
+        <![endif]-->
+
+        <!-- Preloader -->
+        <!-- <div class="preloader">
+            <div class="preloader-inner">
+                <div class="preloader-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div> -->
+        <!-- /End Preloader -->
+
+        <!-- Start Breadcrumbs -->
+        <div class="breadcrumbs">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="breadcrumbs-content">
+                            <h1 class="page-title">Single Product</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <ul class="breadcrumb-nav">
+                            <li>
+                                <a href="{% url "index" %}"
+                                    ><i class="lni lni-home"></i> Home</a
+                                >
+                            </li>
+                            <li><a href="{% url "index" %}">Shop</a></li>
+                            <li>Single Product</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Breadcrumbs -->
+
+        <!-- Start Item Details -->
+        <section class="item-details section">
+            <div class="container">
+                <div class="top-area">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <div class="product-images">
+                                <main id="gallery">
+                                    <div class="main-img">
+                                        <img src="{{ product.image1.url }}" id="current" alt="#" />
+                                    </div>
+                                    {% if product.category == "CPU" %}
+                                    <div class="images">
+                                        <img src="{{ product.image1.url }}" class="img" alt="#" />
+                                    </div>
+                                    {% elif product.category == "Motherboard" %}
+                                    <div class="images">
+                                        <img src="{{ product.image1.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image2.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image3.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image4.url }}" class="img" alt="#" />
+                                    </div>
+                                    {% elif product.category == "Casing" %}
+                                    <div class="images">
+                                        <img src="{{ product.image1.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image2.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image3.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image4.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image5.url }}" class="img" alt="#" />
+                                    </div>
+                                    {% elif product.category == "Cooler" %}
+                                    <div class="images">
+                                        <img src="{{ product.image1.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image2.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image3.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image4.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image5.url }}" class="img" alt="#" />
+                                    </div>
+                                    {% elif product.category == "GPU" %}
+                                    <div class="images">
+                                        <img src="{{ product.image1.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image2.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image3.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image4.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image5.url }}" class="img" alt="#" />
+                                    </div>
+                                    {% elif product.category == "HDD" %}
+                                    <div class="images">
+                                        <img src="{{ product.image1.url }}" class="img" alt="#" />
+                                    </div>
+                                    {% elif product.category == "Headphone" %}
+                                    <div class="images">
+                                        <img src="{{ product.image1.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image2.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image3.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image4.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image5.url }}" class="img" alt="#" />
+                                    </div>
+                                    {% elif product.category == "Keyboard" %}
+                                    <div class="images">
+                                        <img src="{{ product.image1.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image2.url }}" class="img" alt="#" />
+                                        <img src="{{ product.image3.url }}" class="img" alt="#" />
+                                    </div>
+                                    {% endif %}
+                                </main>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <div class="product-info">
+                                <h3 class="title">{{ product.brand }} {{ product.model }}</h3>
+                                <p class="category">
+                                    <i class="lni lni-tag"></i>
+                                    {{ product.category }}:
+                                    <a href="javascript:void(0)">{{ product.brand }}</a>
+                                </p>
+                                <h3 class="price">৳{{ product.price }} <span>৳{{ product.regular_price }}</span></h3>
+        
+                                {% if product.category == "CPU" %}
+                                <p class="info-text">
+                                    <strong>Cores:</strong> {{ product.cores }}<br />
+                                    <strong>Threads:</strong> {{ product.threads }}<br />
+                                    <strong>Base Frequency:</strong> {{ product.base_frequency }} GHz<br />
+                                    <strong>Max Turbo Frequency:</strong> {{ product.boost_frequency }} GHz<br />
+                                </p>
+                                {% elif product.category == "Motherboard" %}
+                                <p class="info-text">
+                                    <strong>Form Factor:</strong> {{ product.form_factor }}<br />
+                                    <strong>Chipset:</strong> {{ product.chipset }}<br />
+                                    <strong>Supported CPU Socket:</strong> {{ product.socket }}<br />
+                                    <strong>Max Memory:</strong> {{ product.max_memory }} GB<br />
+                                    <strong>PCIe Slots:</strong> {{ product.pcie_slots }}<br />
+                                    <strong>SATA Ports:</strong> {{ product.sata_ports }}<br />
+                                </p>
+                                {% elif product.category == "Casing" %}
+                                <p class="info-text">
+                                    <strong>Form Factor:</strong> {{ product.form_factor }}<br />
+                                    <strong>Side Panel:</strong> {{ product.side_panel }}<br />
+                                    <strong>SSD Bays:</strong> {{ product.ssd_bays }}<br />
+                                    <strong>HDD Bays:</strong> {{ product.hdd_bays }} GB<br />
+                                    <strong>Fan Support:</strong> {{ product.fan_support }}<br />
+                                    <strong>Radiator Support:</strong> {{ product.radiator_support }}<br />
+                                </p>
+                                {% elif product.category == "Cooler" %}
+                                <p class="info-text">
+                                    <strong>Cooler Type:</strong> {{ product.cooler_type }}<br />
+                                    <strong>Cooler Size:</strong> {{ product.cooler_size }} mm<br />
+                                    <strong>Fan Speed:</strong> {{ product.fan_speed }} RPM<br />
+                                    <strong>Noise Level:</strong> {{ product.noise_level }}<br />
+                                    <strong>Warranty:</strong> {{ product.warranty }}<br />
+                                </p>
+                                {% elif product.category == "GPU" %}
+                                <p class="info-text">
+                                    <strong>Memory Type:</strong> {{ product.memory_type }}<br />
+                                    <strong>VRAM Capacity:</strong> {{ product.memory_capacity }}<br />
+                                    <strong>Max Resolution:</strong> {{ product.max_resolution }}<br />
+                                    <strong>Core Clock:</strong> {{ product.core_clock }}<br />
+                                    <strong>Memory Clock:</strong> {{ product.memory_clock }}<br />
+                                {% elif product.category == "HDD" %}
+                                <p class="info-text">
+                                    <strong>Storage Capacity:</strong> {{ product.storage_capacity }}<br />
+                                    <strong>Form Factor:</strong> {{ product.form_factor }}<br />
+                                    <strong>Interface:</strong> {{ product.interface }}<br />
+                                    <strong>RPM Speed:</strong> {{ product.rpm }}<br />
+                                {% elif product.category == "Headphone" %}
+                                <p class="info-text">
+                                    <strong>Headphone Type:</strong> {{ product.headphone_type }}<br />
+                                    <strong>Connection:</strong> {{ product.connection }}<br />
+                                    <strong>Microphone:</strong> {{ product.microphone }}<br />
+                                    <strong>Noise Cancellation:</strong> {{ product.noise_cancellation }}<br />
+                                    <strong>RGB:</strong> {{ product.rgb }}<br />
+                                {% elif product.category == "Keyboard" %}
+                                <p class="info-text">
+                                    <strong>Key Type:</strong> {{ product.key_type }}<br />
+                                    <strong>Interface:</strong> {{ product.interface }}<br />
+                                    <strong>Keyboard Size:</strong> {{ product.keyboard_size }}<br />
+                                    <strong>Number of Keys:</strong> {{ product.number_of_keys }}<br />
+                                    <strong>Switch Type:</strong> {{ product.switch_type }}<br />
+                                {% endif %}
+        
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="form-group quantity">
+                                            <label for="color">Quantity</label>
+                                            <select class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom-content">
+                                    <div class="row align-items-end">
+                                        <div class="col-lg-4 col-md-4 col-12">
+                                            <div class="button cart-button">
+                                                <button class="btn" style="width: 100%">
+                                                    <a href="#"></a>Add to Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-12">
+                                            <div class="wish-button">
+                                                <button class="btn">
+                                                    <i class="lni lni-reload"></i>
+                                                    <a href="#"></a>Compare
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-12">
+                                            <div class="wish-button">
+                                                <button class="btn">
+                                                    <i class="lni lni-heart"></i>
+                                                    <a href="#"></a>To Wishlist
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-details-info">
+                    <div class="single-block">
+                        <div class="row">
+                            <div class="col-lg-6 col-12">
+                                <div class="info-body custom-responsive-margin">
+                                    <h4>Details</h4>
+                                    <p>{{ product.description }}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12">
+                                <div class="info-body">
+                                    <h4>Specifications</h4>
+                                    {% if product.category == "CPU" %}
+                                    <ul class="normal-list">
+                                        <li><span>Socket:</span> {{ product.socket }}</li>
+                                        <li><span>Cores:</span> {{ product.cores }}</li>
+                                        <li><span>Threads:</span> {{ product.threads }}</li>
+                                        <li><span>Base Frequency:</span> {{ product.base_frequency }} GHz</li>
+                                        <li><span>Max Turbo Frequency:</span> {{ product.boost_frequency }} GHz</li>
+                                        <li><span>Cache:</span> {{ product.cache }}</li>
+                                        <li><span>Integrated Graphics:</span> {{ product.processor_graphics }}</li>
+                                    </ul>
+                                    {% elif product.category == "Motherboard" %}
+                                    <ul class="normal-list">
+                                        <li><span>Form Factor:</span> {{ product.form_factor }}</li>
+                                        <li><span>Chipset:</span> {{ product.chipset }}</li>
+                                        <li><span>Socket:</span> {{ product.socket }}</li>
+                                        <li><span>Memort Slots:</span> {{ product.memory_slots }}</li>
+                                        <li><span>Max Memory:</span> {{ product.max_memory }} GB</li>
+                                        <li><span>PCIe Slots:</span> {{ product.pcie_slots }}</li>
+                                        <li><span>M.2 Slots:</span> {{ product.m2_slots }}</li>
+                                        <li><span>SATA Ports:</span> {{ product.sata_ports }}</li>
+                                        <li><span>USB Ports:</span> {{ product.usb_ports }}</li>
+                                        <li><span>WiFi/Bluetooth:</span> {{ product.wifi_bluetooth }}</li>
+                                    </ul>
+                                    {% elif product.category == "Casing" %}
+                                    <ul class="normal-list">
+                                        <li><span>Form Factor:</span> {{ product.form_factor }}</li>
+                                        <li><span>Side Panel:</span> {{ product.side_panel }}</li>
+                                        <li><span>SSD Bays:</span> {{ product.ssd_bays }}</li>
+                                        <li><span>HDD Bays:</span> {{ product.hdd_bays }}</li>
+                                        <li><span>Fan Support:</span> {{ product.fan_support }}</li>
+                                        <li><span>Radiator Support:</span> {{ product.radiator_support }}</li>
+                                        <li><span>RGB:</span> {{ product.rgb }}</li>
+                                        <li><span>Dust Filters:</span> {{ product.dust_filters }}</li>
+                                        <li><span>Cable Management:</span> {{ product.cable_management }}</li>
+                                        <li><span>Power Supply:</span> {{ product.power_supply }}</li>
+                                        <li><span>Pre Installed Fans:</span> {{ product.pre_installed_fans }}</li>
+                                    </ul>
+                                    {% elif product.category == "Cooler" %}
+                                    <ul class="normal-list">
+                                        <li><span>Cooler Type:</span> {{ product.cooler_type }}</li>
+                                        <li><span>Cooler Size:</span> {{ product.cooler_size }} mm</li>
+                                        <li><span>Fan Speed:</span> {{ product.fan_speed }} RPM</li>
+                                        <li><span>Noise Level:</span> {{ product.noise_level }}</li>
+                                        <li><span>Warranty:</span> {{ product.warranty }}</li>
+                                        <li><span>RGB:</span> {{ product.rgb }}</li>
+                                        <li><span>TDP:</span> {{ product.tdp }}</li>
+                                    </ul>
+                                    {% elif product.category == "GPU" %}
+                                    <ul class="normal-list">
+                                        <li><span>Memory Type:</span> {{ product.memory_type }}</li>
+                                        <li><span>VRAM Capacity:</span> {{ product.memory_capacity }}</li>
+                                        <li><span>Max Resolution:</span> {{ product.max_resolution }}</li>
+                                        <li><span>Core Clock:</span> {{ product.core_clock }}</li>
+                                        <li><span>Memory Clock:</span> {{ product.memory_clock }}</li>
+                                        <li><span>GPU Cores:</span> {{ product.cores }}</li>
+                                        <li><span>Memory Bus:</span> {{ product.memory_bus }}</li>
+                                        <li><span>Memory Interface:</span> {{ product.memory_interface }}</li>
+                                        <li><span>Core Type:</span> {{ product.core_type }}</li>
+                                        <li><span>Diplay Ports:</span> {{ product.dp_ports }}</li>
+                                        <li><span>HDMI Ports:</span> {{ product.hdmi_ports }}</li>
+                                        <li><span>VGA Ports:</span> {{ product.vga_ports }}</li>
+                                        <li><span>DVI Ports:</span> {{ product.dvi_ports }}</li>
+                                        <li><span>Power Connectors:</span> {{ product.power_connectors }}</li>
+                                    </ul>
+                                    {% elif product.category == "HDD" %}
+                                    <ul class="normal-list">
+                                        <li><span>Storage Capacity:</span> {{ product.storage_capacity }}</li>
+                                        <li><span>Form Factor:</span> {{ product.form_factor }}</li>
+                                        <li><span>Interface:</span> {{ product.interface }}</li>
+                                        <li><span>RPM Speed:</span> {{ product.rpm }}</li>
+                                    </ul>
+                                    {% elif product.category == "Headphone" %}
+                                    <ul class="normal-list">
+                                        <li><span>Headphone Type:</span> {{ product.headphone_type }}</li>
+                                        <li><span>Connection:</span> {{ product.connection }}</li>
+                                        <li><span>Microphone:</span> {{ product.microphone }}</li>
+                                        <li><span>Noise Cancellation:</span> {{ product.noise_cancellation }}</li>
+                                        <li><span>RGB:</span> {{ product.rgb }}</li>
+                                        <li><span>Frequency Response:</span> {{ product.frequency_response }}</li>
+                                        <li><span>Impedance:</span> {{ product.impedance }}</li>
+                                        <li><span>Sensitivity:</span> {{ product.sensitivity }}</li>
+                                        <li><span>Input Jack:</span> {{ product.input_jack }}</li>
+                                        <li><span>Cable Length:</span> {{ product.cable_length }}</li>
+                                    </ul>
+                                    {% elif product.category == "Keyboard" %}
+                                    <ul class="normal-list">
+                                        <li><span>Key Type: </span> {{ product.key_type }}</li>
+                                        <li><span>Interface: </span> {{ product.interface }}</li>
+                                        <li><span>Keyboard Size: </span> {{ product.keyboard_size }}</li>
+                                        <li><span>Number of Keys: </span> {{ product.number_of_keys }}</li>
+                                        <li><span>Switch Type: </span> {{ product.switch_type }}</li>
+                                        <li><span>Cable Length: </span> {{ product.cable_length }}</li>
+                                        <li><span>RGB: </span> {{ product.rgb }}</li>
+                                    </ul>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+        <!-- End Item Details -->
+
+        <!-- Review Modal -->
+        <div
+            class="modal fade review-modal"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Leave a Review
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="review-name">Your Name</label>
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        id="review-name"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="review-email">Your Email</label>
+                                    <input
+                                        class="form-control"
+                                        type="email"
+                                        id="review-email"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="review-subject">Subject</label>
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        id="review-subject"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="review-rating">Rating</label>
+                                    <select
+                                        class="form-control"
+                                        id="review-rating"
+                                    >
+                                        <option>5 Stars</option>
+                                        <option>4 Stars</option>
+                                        <option>3 Stars</option>
+                                        <option>2 Stars</option>
+                                        <option>1 Star</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="review-message">Review</label>
+                            <textarea
+                                class="form-control"
+                                id="review-message"
+                                rows="8"
+                                required
+                            ></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer button">
+                        <button type="button" class="btn">Submit Review</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Review Modal -->
+
+        <!-- ========================= scroll-top ========================= -->
+        <a href="#" class="scroll-top">
+            <i class="lni lni-chevron-up"></i>
+        </a>
+
+        <!-- ========================= JS here ========================= -->
+        <scrip src="{% static "product-details/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "product-details/js/tiny-slider.js" %}"></script>
+        <script src="{% static "product-details/js/glightbox.min.js" %}"></script>
+        <script src="{% static "product-details/js/main.js" %}"></script>
+        <script type="text/javascript">
+            const current = document.getElementById("current");
+            const opacity = 0.6;
+            const imgs = document.querySelectorAll(".img");
+            imgs.forEach((img) => {
+                img.addEventListener("click", (e) => {
+                    //reset opacity
+                    imgs.forEach((img) => {
+                        img.style.opacity = 1;
+                    });
+                    current.src = e.target.src;
+                    //adding class
+                    //current.classList.add("fade-in");
+                    //opacity
+                    e.target.style.opacity = opacity;
+                });
+            });
+        </script>
+    </body>
+</html>
+{% endblock %}
